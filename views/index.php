@@ -1,22 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Celulares</title>
-</head>
-<body>
-    <header>
-        <!-- AQUI VAO OS ITENS DO CABEÇALHO DA PAGINA -->
-    </header>
+<?php
+require_once '../templates/cabecalho.php';
+?>
 
-    <main>
-        <!-- AQUI VAO OS ITENS DO CONTEUDO PRINCIPAL DA PAGINA -->
-    </main>
+<!-- container do carrossel -->
+<div class="slideshow-container">
 
-    <footer>
-        <!-- AQUI VAO OS ITENS DO RODAPE DA PAGINA -->
-    </footer>
-</body>
-</html>
+    <!-- imagens com largura maxima com numero e texto de legenda -->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="https://source.unsplash.com/random?landscape,mountain" style="width:100%">
+        <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="https://source.unsplash.com/random?landscape,night" style="width:100%">
+        <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="https://source.unsplash.com/random?landscape,city" style="width:100%">
+        <div class="text">Caption Three</div>
+    </div>
+
+    <!-- botoes "proximo" e "anterior" -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- os circulos -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<?php
+require_once '../templates/rodape.php';
+?>
