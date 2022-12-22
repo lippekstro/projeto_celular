@@ -1,0 +1,28 @@
+.container-pesquisa{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #2a46c4;
+    color: #d9d9d9;
+}
+
+.menu-global {
+    display: flex;
+    justify-content: center;
+}
+
+.links-global{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    list-style-type: none;
+}
+
+.links-global a {
+    text-decoration: none;
+    color: black;
+}
+
+.container-logo img {
+    width: 30%;
+}

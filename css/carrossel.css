@@ -1,3 +1,7 @@
+.container-carrossel {
+    margin: 1rem;
+}
+
 /* container dos slides */
 .slideshow-container {
     max-width: 1000px;
