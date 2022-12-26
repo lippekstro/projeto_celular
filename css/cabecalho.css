@@ -1,8 +1,9 @@
 .container-pesquisa{
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
-    background-color: #2a46c4;
+    align-items: center;
+    padding: 1rem;
+    background-color: black;
     color: #d9d9d9;
 }
 
@@ -16,6 +17,7 @@
     justify-content: space-evenly;
     width: 100%;
     list-style-type: none;
+    background-color: #a9a9a91a;
 }
 
 .links-global a {
@@ -23,6 +25,26 @@
     color: black;
 }
 
+.container-logo {
+    width: 10%;
+}
+
 .container-logo img {
-    width: 30%;
+    width: 100%;
+}
+
+.botao_busca {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.caixa_busca {
+    display: flex;
+    align-items: center;
+}
+
+.carrinho_login a {
+    color: white;
+    padding: 0.4rem;
 }
