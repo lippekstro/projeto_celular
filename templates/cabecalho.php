@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/carrossel.css">
     <link rel="stylesheet" href="../css/cabecalho.css">
     <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/rodape.css">
 
 
 </head>

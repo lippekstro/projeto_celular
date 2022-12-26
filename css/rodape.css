@@ -1,0 +1,28 @@
+footer {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.texto_rodape {
+    display: flex;
+    flex-direction: column;
+}
+
+.container_contatos span{
+    margin: 0.5rem;
+
+}
+
+.container_redes_sociais{
+    display: flex;
+}
+
+.redes_sociais {
+    filter: invert(1);
+    margin: 0.5rem;
+}
