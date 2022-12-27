@@ -1,0 +1,27 @@
+.container_produto {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    justify-content: space-evenly;
+}
+
+.container_infos_produto {
+    width: 50%;
+}
+
+.container-preco-descricao {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+.container-preco-descricao h2 {
+    text-align: justify;
+}
+
+.container-botoes-produto {
+    display: flex;
+    justify-content: space-evenly;
+}

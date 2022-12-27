@@ -3,7 +3,6 @@
   max-width: 300px;
   margin: 0.5rem;
   text-align: center;
-  font-family: arial;
   transition: 1s;
 }
 
@@ -26,6 +25,7 @@
   text-align: center;
   width: 100%;
   font-size: 18px;
+  border-radius: 0;
 }
 
 .card button:hover {
@@ -37,4 +37,9 @@
   margin: 1rem;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
 }

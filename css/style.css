@@ -2,10 +2,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-button{
+button {
     cursor: pointer;
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* Add a text color */
+    padding: 14px 28px;
+    /* Add some padding */
+    border-radius: 16px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+.botao-info {
+    background-color: black;
+}
+.botao-info:hover {
+    background-color: #000000bd;
 }
 
 .material-symbols-outlined {

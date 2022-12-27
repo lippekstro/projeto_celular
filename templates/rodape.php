@@ -16,7 +16,7 @@
     <div class="container_redes_sociais">
         <img class="redes_sociais" src="../img/twitter.svg" alt="">
         <img class="redes_sociais" src="../img/facebook.svg" alt="">
-        <img class="redes_sociais" src="../img/instagram.svg" alt="">
+        <a href="https://www.instragram.com/cellria" target="_blank"><img class="redes_sociais" src="../img/instagram.svg" alt=""></a>
     </div>
 </footer>
 </body>
