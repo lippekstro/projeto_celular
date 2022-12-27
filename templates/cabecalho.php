@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/cabecalho.css">
     <link rel="stylesheet" href="../css/cards.css">
     <link rel="stylesheet" href="../css/rodape.css">
+    <link rel="stylesheet" href="../css/sobre.css">
 
 
 </head>
@@ -44,9 +45,9 @@
         </div>
         <div class="menu-global">
             <ul class="links-global">
-                <li><a href="">INICIO</a></li>
-                <li><a href="">CELULARES</a></li>
-                <li><a href="">SOBRE NÓS</a></li>
+                <li><a href="../views/index.php">INICIO</a></li>
+                <li><a href="../views/celulares.php">CELULARES</a></li>
+                <li><a href="../views/sobre.php">SOBRE NÓS</a></li>
                 <li><a href="">SUPORTE</a></li>
                 <li><a href="">COMPARE</a></li>
             </ul>

@@ -1,0 +1,15 @@
+.container_sobre {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    justify-content: space-evenly;
+}
+
+.container_texto_sobre {
+    width: 50%;
+}
+
+.container_texto_sobre p {
+    text-align: justify;
+    font-size: 20px;
+}

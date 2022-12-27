@@ -18,6 +18,11 @@
     width: 100%;
     list-style-type: none;
     background-color: #a9a9a91a;
+    flex-wrap: wrap;
+}
+
+.links-global li {
+    margin: 0.5rem;
 }
 
 .links-global a {

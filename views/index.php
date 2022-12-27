@@ -9,19 +9,19 @@ require_once '../templates/cabecalho.php';
         <!-- imagens com largura maxima com numero e texto de legenda -->
         <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
-            <img src="https://source.unsplash.com/random?landscape,mountain" style="width:100%">
+            <img src="https://source.unsplash.com/random/1920x1080/?landscape,mountain" style="width:100%">
             <div class="text">Caption Text</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
-            <img src="https://source.unsplash.com/random?landscape,night" style="width:100%">
+            <img src="https://source.unsplash.com/random/1920x1080/?landscape,night" style="width:100%">
             <div class="text">Caption Two</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
-            <img src="https://source.unsplash.com/random?landscape,city" style="width:100%">
+            <img src="https://source.unsplash.com/random/1920x1080/?landscape,city" style="width:100%">
             <div class="text">Caption Three</div>
         </div>
 
