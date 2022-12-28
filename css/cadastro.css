@@ -1,0 +1,32 @@
+.container-imagem-formulario {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    justify-content: space-evenly;
+}
+
+.container-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: black;
+}
+
+.container-cadastro {
+    color: white;
+    font-weight: 600;
+}
+
+.elemento-form-cadastro {
+    margin: 0.5rem;
+}
+
+.elemento-form-cadastro label {
+    font-size: 20px;
+}
+
+.elemento-form-cadastro button {
+    font-size: 22px;
+}

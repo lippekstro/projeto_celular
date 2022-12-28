@@ -16,7 +16,7 @@ require_once '../templates/cabecalho.php';
             </div>
 
             <div class="elemento_form_login">
-                <a href=""><span>Se você não tem conta, cadastre-se aqui</span></a>
+                <a href="cadastro.php"><span>Se você não tem conta, cadastre-se aqui</span></a>
                 <a href=""><span>Esqueceu a senha?</span></a>
             </div>
 

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/sobre.css">
     <link rel="stylesheet" href="../css/produto.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
 
 
 </head>
