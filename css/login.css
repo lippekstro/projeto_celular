@@ -23,6 +23,13 @@
 
 .elemento_form_login {
     margin: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.elemento_form_login input {
+    padding: 0.5rem;
+    margin: 0 0.5rem;
 }
 
 .elemento_form_login a {

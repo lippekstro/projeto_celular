@@ -11,16 +11,20 @@
     align-items: center;
     margin: 1rem;
     padding: 1rem;
-    background-color: black;
-}
-
-.container-cadastro {
+    background-color: black; 
     color: white;
     font-weight: 600;
 }
 
 .elemento-form-cadastro {
     margin: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.elemento-form-cadastro input {
+    padding: 0.5rem;
+    margin: 0 0.5rem;
 }
 
 .elemento-form-cadastro label {
