@@ -22,7 +22,9 @@ footer {
     display: flex;
 }
 
+
 .redes_sociais {
-    filter: invert(1);
     margin: 0.5rem;
+    color: white;
+    font-size: 30px;
 }

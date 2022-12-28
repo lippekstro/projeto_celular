@@ -8,6 +8,7 @@
     <title>Loja de Celulares</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/carrossel.css">
     <link rel="stylesheet" href="../css/cabecalho.css">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="../css/rodape.css">
     <link rel="stylesheet" href="../css/sobre.css">
     <link rel="stylesheet" href="../css/produto.css">
+    <link rel="stylesheet" href="../css/login.css">
 
 
 </head>
@@ -42,7 +44,7 @@
 
             <div class="carrinho_login">
                 <a href=""><span class="material-symbols-outlined">shopping_cart</span></a>
-                <a href=""><span class="material-symbols-outlined">login</span></a>
+                <a href="../views/login.php"><span class="material-symbols-outlined">login</span></a>
             </div>
         </div>
         <div class="menu-global">

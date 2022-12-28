@@ -1,0 +1,32 @@
+.container-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: black;
+}
+
+.container-login label {
+    color: white;
+    font-weight: 600;
+}
+
+.container-login a {
+    color: white;
+}
+
+.form-login {
+    display: flex;
+    justify-content: center;
+}
+
+.elemento_form_login {
+    margin: 0.5rem;
+}
+
+.elemento_form_login a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

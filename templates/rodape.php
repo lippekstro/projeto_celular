@@ -14,9 +14,9 @@
     </div>
 
     <div class="container_redes_sociais">
-        <img class="redes_sociais" src="../img/twitter.svg" alt="">
-        <img class="redes_sociais" src="../img/facebook.svg" alt="">
-        <a href="https://www.instragram.com/cellria" target="_blank"><img class="redes_sociais" src="../img/instagram.svg" alt=""></a>
+        <a href=""><i class="bi bi-twitter redes_sociais"></i></a>
+        <a href=""><i class="bi bi-facebook redes_sociais"></i></a>
+        <a href="https://www.instragram.com/cellria" target="_blank"><i class="bi bi-instagram redes_sociais"></i></a>
     </div>
 </footer>
 </body>
