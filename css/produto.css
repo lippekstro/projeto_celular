@@ -5,6 +5,10 @@
     justify-content: space-evenly;
 }
 
+.container-imagem-produto {
+    width: 50%;
+}
+
 .container_infos_produto {
     width: 50%;
 }
@@ -24,4 +28,27 @@
 .container-botoes-produto {
     display: flex;
     justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+    .container_produto {
+        flex-direction: column;
+    }
+
+    .container-imagem-produto {
+        width: 100%;
+    }
+
+    .container_infos_produto {
+        width: 100%;
+    }
+
+    .container-botoes-produto {
+        flex-direction: column;
+    }
+
+    .container-botoes-produto button {
+        height: 60px;
+        margin: 1rem;
+    }
 }

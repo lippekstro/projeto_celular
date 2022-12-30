@@ -13,3 +13,17 @@
     text-align: justify;
     font-size: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+    .container_sobre {
+        flex-direction: column;
+    }
+
+    .container-imagem-sobre {
+        width: 50%;
+    }
+    
+    .container_texto_sobre {
+        width: 100%;
+    }
+}

@@ -1,3 +1,14 @@
+.container-form-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*quando usamos o top e o left estamos posicionando a div usando como referencia o canto esquerdo superior dela
+    o transform ajuda a posicionar melhor pois nele estamos reposicionando a div em relaçao as suas proprias coordenadas
+    Isso é útil quando você não sabe o tamanho exato da div ou quando deseja centralizar a div independentemente do tamanho dela.
+    */
+}
+
 .container-login {
     display: flex;
     flex-direction: column;
@@ -25,6 +36,7 @@
     margin: 0.5rem;
     display: flex;
     align-items: center;
+    text-align: center;
 }
 
 .elemento_form_login input {
@@ -36,4 +48,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .container-form-login {
+        position: unset;
+        transform: none;
+    }
 }

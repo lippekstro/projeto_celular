@@ -42,6 +42,7 @@
     background-color: transparent;
     border: none;
     color: white;
+    padding: 0;
 }
 
 .caixa_busca {
@@ -49,7 +50,30 @@
     align-items: center;
 }
 
+.carrinho_login {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .carrinho_login a {
     color: white;
     padding: 0.4rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .container-pesquisa {
+        flex-direction: column;
+    }
+
+    .container-logo {
+        width: 40%;
+    }
+
+    .container-busca {
+        width: 100%;
+    }
+
+    .container-busca #busca {
+        width: 100%;
+    }
 }

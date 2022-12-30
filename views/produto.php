@@ -3,8 +3,8 @@ require_once '../templates/cabecalho.php';
 ?>
 
 <div class="container_produto">
-    <div>
-        <img src="../img/grito.png" alt="">
+    <div class="container-imagem-produto">
+        <img src="https://source.unsplash.com/random/1920x1080/?smartphone" alt="" width="100%">
     </div>
     <div class="container_infos_produto">
 

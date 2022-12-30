@@ -32,10 +32,10 @@
                 </a>
             </div>
 
-            <div>
+            <div class="container-busca">
                 <form action="">
                     <div class="caixa_busca">
-                        <input type="search" name="" id="">
+                        <input type="search" name="busca" id="busca">
                         <button class="botao_busca" type="submit">
                             <span class="material-symbols-outlined">search</span>
                         </button>

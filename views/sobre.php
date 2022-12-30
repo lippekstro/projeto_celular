@@ -3,8 +3,8 @@ require_once '../templates/cabecalho.php';
 ?>
 
 <div class="container_sobre">
-    <div>
-        <img src="../img/logo-black-removebg-preview.png" alt="">
+    <div class="container-imagem-sobre">
+        <img src="../img/logo-black-removebg-preview.png" alt="" width="100%">
     </div>
     <div class="container_texto_sobre">
         <p>

@@ -2,7 +2,7 @@
 require_once '../templates/cabecalho.php';
 ?>
 
-<div>
+<div class="container-form-login">
     <form action="" method="POST" class="form-login">
         <div class="container-login">
             <div class="elemento_form_login">
@@ -16,11 +16,11 @@ require_once '../templates/cabecalho.php';
             </div>
 
             <div class="elemento_form_login">
-                <a href="cadastro.php"><span>Se você não tem conta, cadastre-se aqui</span></a>
+                <a href="cadastro.php">Se você não tem conta, cadastre-se aqui</a>
             </div>
 
             <div class="elemento_form_login">
-                <a href=""><span>Esqueceu a senha?</span></a>
+                <a href="">Esqueceu a senha?</a>
             </div>
 
             <div class="elemento_form_login">
@@ -34,5 +34,9 @@ require_once '../templates/cabecalho.php';
 
 
 <?php
+//aqui eu to passando as variaveis que definem os estilos para essa pagina em especifico
+$fixa = 'position: fixed;';
+$bottom = 'bottom: 0;';
+$largura = 'width: 100%;';
 require_once '../templates/rodape.php';
 ?>

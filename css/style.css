@@ -23,6 +23,7 @@ button:hover {
 
 .botao-info {
     background-color: black;
+    color: white;
 }
 .botao-info:hover {
     background-color: #000000bd;

@@ -13,6 +13,11 @@ footer {
     flex-direction: column;
 }
 
+.container_contatos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .container_contatos span{
     margin: 0.5rem;
 
@@ -20,6 +25,7 @@ footer {
 
 .container_redes_sociais{
     display: flex;
+    flex-wrap: wrap;
 }
 
 
