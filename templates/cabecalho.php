@@ -64,6 +64,7 @@ session_start();
 
                         <div class="conteudo-dropdown">
                             <a href="">Editar Perfil</a>
+                            <a href="../views/logout.php">Sair</a>
                         </div>
                     <?php endif; ?>
                 </div>
