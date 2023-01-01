@@ -1,5 +1,5 @@
 CREATE TABLE carrinho (
-  id_carrinho INTEGER PRIMARY KEY,
+  id_carrinho INTEGER AUTO_INCREMENT PRIMARY KEY,
   id_cliente INTEGER NOT NULL,
   data_criacao DATETIME NOT NULL,
   data_atualizacao DATETIME NOT NULL,
@@ -7,7 +7,7 @@ CREATE TABLE carrinho (
 );
 
 CREATE TABLE itens_do_carrinho (
-  id_itens_do_carrinho INTEGER PRIMARY KEY,
+  id_itens_do_carrinho INTEGER AUTO_INCREMENT PRIMARY KEY,
   id_carrinho INTEGER NOT NULL,
   id_produto INTEGER NOT NULL,
   quantidade INTEGER NOT NULL,

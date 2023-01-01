@@ -1,4 +1,5 @@
 <script src="../js/carrossel.js"></script>
+<script src="../js/repete_senha.js"></script>
 </main>
 
 

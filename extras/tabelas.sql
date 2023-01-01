@@ -1,5 +1,5 @@
 CREATE TABLE produtos (
-  id_produto INTEGER PRIMARY KEY,
+  id_produto INTEGER AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(255) NOT NULL,
   descricao TEXT NOT NULL,
   preco DECIMAL NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE produtos (
 );
 
 CREATE TABLE clientes (
-  id_cliente INTEGER PRIMARY KEY,
+  id_cliente INTEGER AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   endereco TEXT NOT NULL,
@@ -17,14 +17,14 @@ CREATE TABLE clientes (
 );
 
 CREATE TABLE formas_de_pagamento (
-  id_forma_de_pagamento INTEGER PRIMARY KEY,
+  id_forma_de_pagamento INTEGER AUTO_INCREMENT PRIMARY KEY,
   cartao_de_credito BOOLEAN NOT NULL,
   boleto BOOLEAN NOT NULL,
   pix BOOLEAN NOT NULL
 );
 
 CREATE TABLE pedidos (
-  id_pedido INTEGER PRIMARY KEY,
+  id_pedido INTEGER AUTO_INCREMENT PRIMARY KEY,
   id_cliente INTEGER NOT NULL,
   id_forma_pagamento INTEGER NOT NULL,
   data_pedido DATETIME NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE pedidos (
 );
 
 CREATE TABLE itens_do_pedido (
-  id_itens_do_pedido INTEGER PRIMARY KEY,
+  id_itens_do_pedido INTEGER AUTO_INCREMENT PRIMARY KEY,
   id_pedido INTEGER NOT NULL,
   id_produto INTEGER NOT NULL,
   quantidade INTEGER NOT NULL,
