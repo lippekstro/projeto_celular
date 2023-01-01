@@ -32,3 +32,8 @@ button:hover {
 .material-symbols-outlined {
     font-size: 30px;
 }
+
+.flex-horizontal-alinhado {
+    display: flex;
+    align-items: center;
+}

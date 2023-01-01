@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -7,7 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja de Celulares</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/carrossel.css">
@@ -46,7 +53,21 @@
 
             <div class="carrinho_login">
                 <a href="../views/carrinho.php"><span class="material-symbols-outlined">shopping_cart</span></a>
-                <a href="../views/login.php"><span class="material-symbols-outlined">login</span></a>
+                <div class="dropdown">
+                    <?php if (!isset($_SESSION['usuario'])) : ?>
+                        <a href="../views/login.php"><span class="material-symbols-outlined">login</span></a>
+                    <?php else : ?>
+                        <div class="flex-horizontal-alinhado">
+                            <p>Olá, <?= $_SESSION['usuario']['nome'] ?></p>
+                            <a href="../views/login.php"><span class="material-symbols-outlined">account_circle</span></a>
+                        </div>
+
+                        <div class="conteudo-dropdown">
+                            <a href="">Editar Perfil</a>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
             </div>
         </div>
         <div class="menu-global">

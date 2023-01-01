@@ -1,4 +1,4 @@
-.container-pesquisa{
+.container-pesquisa {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,7 +12,7 @@
     justify-content: center;
 }
 
-.links-global{
+.links-global {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -57,8 +57,31 @@
 
 .carrinho_login a {
     color: white;
-    padding: 0.4rem;
 }
+
+.carrinho_login .material-symbols-outlined {
+    margin-right: 2rem;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.conteudo-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: black;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .conteudo-dropdown {
+    display: block;
+}
+
 
 @media only screen and (max-width: 600px) {
     .container-pesquisa {
