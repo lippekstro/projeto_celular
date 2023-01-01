@@ -1,0 +1,24 @@
+table {
+    text-align: center;
+    margin: 1rem;
+    width: 90%;
+}
+
+th, td {
+    padding: 0.5rem;
+
+}
+
+.container-carrinho {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+}
+
+.container-tabela {
+    width: 80%;
+}
+
+.container-total {
+    width: 20%;
+}

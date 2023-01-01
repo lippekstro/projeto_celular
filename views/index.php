@@ -43,7 +43,7 @@ require_once '../templates/cabecalho.php';
 <div class="container_cards">
     <div class="card">
         <a href="produto.php">
-            <img src="https://source.unsplash.com/random/1920x1080/?product, smartphone, apple" alt="Denim Jeans" style="width:100%">
+            <img src="https://source.unsplash.com/random/1920x1080/?apple" alt="Denim Jeans" style="width:100%">
             <h1>Quadro o Grito</h1>
             <p class="price">$19.99</p>
             <p>Esse é o quadro o Grito</p>
@@ -53,7 +53,7 @@ require_once '../templates/cabecalho.php';
 
     <div class="card">
         <a href="produto.php">
-            <img src="https://source.unsplash.com/random/1920x1080/?product, smartphone, motorola" alt="Denim Jeans" style="width:100%">
+            <img src="https://source.unsplash.com/random/1920x1080/?motorola" alt="Denim Jeans" style="width:100%">
             <h1>Quadro o Grito</h1>
             <p class="price">$19.99</p>
             <p>Esse é o quadro o Grito</p>
@@ -63,7 +63,7 @@ require_once '../templates/cabecalho.php';
 
     <div class="card">
         <a href="produto.php">
-            <img src="https://source.unsplash.com/random/1920x1080/?product, smartphone, samsung" alt="Denim Jeans" style="width:100%">
+            <img src="https://source.unsplash.com/random/1920x1080/?samsung" alt="Denim Jeans" style="width:100%">
             <h1>Quadro o Grito</h1>
             <p class="price">$19.99</p>
             <p>Esse é o quadro o Grito</p>
@@ -73,7 +73,7 @@ require_once '../templates/cabecalho.php';
 
     <div class="card">
         <a href="produto.php">
-            <img src="https://source.unsplash.com/random/1920x1080/?product, smartphone, xiaomi" alt="Denim Jeans" style="width:100%">
+            <img src="https://source.unsplash.com/random/1920x1080/?xiaomi" alt="Denim Jeans" style="width:100%">
             <h1>Quadro o Grito</h1>
             <p class="price">$19.99</p>
             <p>Esse é o quadro o Grito</p>

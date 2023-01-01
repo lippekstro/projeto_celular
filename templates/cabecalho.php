@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../css/produto.css">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="../css/carrinho.css">
 
 
 </head>
@@ -44,7 +45,7 @@
             </div>
 
             <div class="carrinho_login">
-                <a href=""><span class="material-symbols-outlined">shopping_cart</span></a>
+                <a href="../views/carrinho.php"><span class="material-symbols-outlined">shopping_cart</span></a>
                 <a href="../views/login.php"><span class="material-symbols-outlined">login</span></a>
             </div>
         </div>
@@ -53,8 +54,6 @@
                 <li><a href="../views/index.php">INICIO</a></li>
                 <li><a href="../views/celulares.php">CELULARES</a></li>
                 <li><a href="../views/sobre.php">SOBRE NÓS</a></li>
-                <li><a href="">SUPORTE</a></li>
-                <li><a href="">COMPARE</a></li>
             </ul>
         </div>
     </header>
