@@ -7,7 +7,7 @@ require_once '../templates/cabecalho.php';
         <img src="../img/logo-black-removebg-preview.png" alt="">
     </div>
     <div class="">
-        <form action="" class="container-cadastro" method="POST">
+        <form action="../controllers/cria_cliente_controller.php" class="container-cadastro" method="POST">
             <div class="elemento-form-cadastro">
                 <label for="nome"><span class="material-symbols-outlined">person</span></label>
                 <input type="text" name="nome" id="nome" placeholder="Nome">
