@@ -28,10 +28,10 @@ class Cliente
         $lista = $stmt->fetch();
 
         $this->nome = $lista['nome'];
-        $this->descricao = $lista['email'];
-        $this->preco = $lista['endereco'];
-        $this->imagem = $lista['telefone'];
-        $this->fabricante = $lista['senha'];
+        $this->email = $lista['email'];
+        $this->endereco = $lista['endereco'];
+        $this->telefone = $lista['telefone'];
+        $this->senha = $lista['senha'];
     }
 
     public function criar()
