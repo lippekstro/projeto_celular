@@ -16,8 +16,6 @@ require_once '../templates/cabecalho.php';
         <div class="container-botoes-produto">
             <button class="botao-info" title="adicionar ao carrinho"><span class="material-symbols-outlined">add_shopping_cart</span></button>
             <button class="botao-info">Comprar</button>
-            <button class="botao-info" title="favoritar"><span class="material-symbols-outlined">favorite</span></button>
-            <button class="botao-info">Comparar</button>
         </div>
 
     </div>

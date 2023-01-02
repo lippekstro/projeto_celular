@@ -2,7 +2,7 @@ CREATE TABLE produtos (
   id_produto INTEGER AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(255) NOT NULL,
   descricao TEXT NOT NULL,
-  preco DECIMAL NOT NULL,
+  preco DECIMAL (10,2) NOT NULL,
   imagem BLOB NOT NULL,
   fabricante VARCHAR(255) NOT NULL
 );
@@ -39,7 +39,7 @@ CREATE TABLE itens_do_pedido (
   id_pedido INTEGER NOT NULL,
   id_produto INTEGER NOT NULL,
   quantidade INTEGER NOT NULL,
-  preco DECIMAL NOT NULL,
+  preco DECIMAL (10,2) NOT NULL,
   FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido),
   FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
 );

@@ -11,7 +11,7 @@ CREATE TABLE itens_do_carrinho (
   id_carrinho INTEGER NOT NULL,
   id_produto INTEGER NOT NULL,
   quantidade INTEGER NOT NULL,
-  preco DECIMAL NOT NULL,
+  preco DECIMAL (10, 2) NOT NULL,
   FOREIGN KEY (id_carrinho) REFERENCES carrinho(id_carrinho),
   FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
 );
