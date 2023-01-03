@@ -1,7 +1,5 @@
 <?php
 require_once '../templates/cabecalho.php';
-require_once '../models/produto.php';
-require_once '../models/conexao.php';
 
 try {
     $lista = Produto::listar();
@@ -53,8 +51,8 @@ try {
 <div class="container_cards">
     <?php foreach ($lista as $celular): ?>
     <div class="card">
-        <a href="produto.php">
-            <img src="https://source.unsplash.com/random/1920x1080/?apple" alt="Denim Jeans" style="width:100%">
+        <a href="produto.php?id_produto=<?= $celular['id_produto'] ?>">
+            <img src="data:image/jpg;charset=utf8;base64,<?= base64_encode($celular['imagem']); ?>" style="width: 100%;"/>
             <h1><?= $celular['nome'] ?></h1>
             <p class="price"><?= $celular['preco'] ?> R$</p>
             <p><?= $celular['descricao'] ?></p>
@@ -62,8 +60,6 @@ try {
         </a>
     </div>
     <?php endforeach; ?>
-
-    
 </div>
 
 

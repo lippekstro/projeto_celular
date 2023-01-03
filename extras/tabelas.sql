@@ -4,7 +4,8 @@ CREATE TABLE produtos (
   descricao TEXT NOT NULL,
   preco DECIMAL (10,2) NOT NULL,
   imagem BLOB NOT NULL,
-  fabricante VARCHAR(255) NOT NULL
+  fabricante VARCHAR(255) NOT NULL,
+  estoque INTEGER NOT NULL
 );
 
 CREATE TABLE clientes (
@@ -13,7 +14,8 @@ CREATE TABLE clientes (
   email VARCHAR(255) NOT NULL,
   endereco TEXT NOT NULL,
   telefone VARCHAR(255) NOT NULL,
-  senha VARCHAR(255) NOT NULL
+  senha VARCHAR(255) NOT NULL,
+  nivel_acesso INTEGER NOT NULL
 );
 
 CREATE TABLE formas_de_pagamento (

@@ -8,6 +8,8 @@ class Produto
     public $preco;
     public $imagem;
     public $fabricante;
+    public $estoque;
+
 
     public function __construct($id_produto = false)
     {
@@ -19,7 +21,7 @@ class Produto
 
     public function carregar()
     {
-        $query = "SELECT nome, descricao, preco, imagem, fabricante FROM produtos WHERE id_produto = :id_produto";
+        $query = "SELECT nome, descricao, preco, imagem, fabricante, estoque FROM produtos WHERE id_produto = :id_produto";
         $conexao = conexao::conectar();
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(':id_produto', $this->id_produto);
@@ -32,12 +34,13 @@ class Produto
         $this->preco = $lista['preco'];
         $this->imagem = $lista['imagem'];
         $this->fabricante = $lista['fabricante'];
+        $this->estoque = $lista['estoque'];
     }
 
     public function criar()
     {
-        $query = "INSERT INTO produtos (nome, descricao, preco, imagem, fabricante) 
-        VALUES (:nome, :descricao, :preco, :imagem, :fabricante)";
+        $query = "INSERT INTO produtos (nome, descricao, preco, imagem, fabricante, estoque) 
+        VALUES (:nome, :descricao, :preco, :imagem, :fabricante, :estoque)";
         $conexao = Conexao::conectar();
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(':nome', $this->nome);
@@ -45,6 +48,7 @@ class Produto
         $stmt->bindValue(':preco', $this->preco);
         $stmt->bindValue(':imagem', $this->imagem);
         $stmt->bindValue(':fabricante', $this->fabricante);
+        $stmt->bindValue(':estoque', $this->estoque);
 
         $stmt->execute();
     }
@@ -60,15 +64,16 @@ class Produto
 
     public function editar()
     {
-        $query = "UPDATE produtos SET nome = :nome, descricao = :descricao, preco = :preco, imagem = :imagem, fabricante = :fabricante
+        $query = "UPDATE produtos SET nome = :nome, descricao = :descricao, preco = :preco, fabricante = :fabricante, estoque = :estoque
         WHERE id_produto = :id_produto";
         $conexao = Conexao::conectar();
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(":nome", $this->nome);
         $stmt->bindValue(":descricao", $this->descricao);
         $stmt->bindValue(":preco", $this->preco);
-        $stmt->bindValue(":imagem", $this->imagem);
         $stmt->bindValue(":fabricante", $this->fabricante);
+        $stmt->bindValue(":estoque", $this->estoque);
+        $stmt->bindValue(":id_produto", $this->id_produto);
         $stmt->execute();
     }
 
@@ -79,5 +84,16 @@ class Produto
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(":id_produto", $this->id_produto);
         $stmt->execute();
+    }
+
+    public static function listarPeloId($id_produto)
+    {
+        $query = "SELECT * FROM produtos WHERE id_produto = :id_produto";
+        $conexao = Conexao::conectar();
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(":id_produto", $id_produto);
+        $stmt->execute();
+        $lista = $stmt->fetchAll();
+        return $lista;
     }
 }

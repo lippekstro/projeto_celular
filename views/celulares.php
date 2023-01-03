@@ -1,50 +1,28 @@
 <?php
 require_once '../templates/cabecalho.php';
+
+
+try {
+    $lista = Produto::listar();
+} catch (Exception $e){
+    echo $e->getMessage();
+}
 ?>
 
 <!-- container dos cards -->
 <div class="container_cards">
+    <?php foreach ($lista as $celular): ?>
     <div class="card">
-        <a href="produto.php">
-            <img src="https://source.unsplash.com/random/1920x1080/?product, smartphone, apple" alt="Denim Jeans" style="width:100%">
-            <h1>Quadro o Grito</h1>
-            <p class="price">$19.99</p>
-            <p>Esse é o quadro o Grito</p>
+        <a href="produto.php?id_produto=<?= $celular['id_produto'] ?>">
+        <img src="data:image/jpg;charset=utf8;base64,<?= base64_encode($celular['imagem']); ?>" style="width: 100%;"/>
+            <h1><?= $celular['nome'] ?></h1>
+            <p class="price"><?= $celular['preco'] ?> R$</p>
+            <p><?= $celular['descricao'] ?></p>
             <p><button>Confira</button></p>
         </a>
     </div>
-
-    <div class="card">
-        <a href="produto.php">
-            <img src="https://source.unsplash.com/random/1920x1080/?product, smartphone, motorola" alt="Denim Jeans" style="width:100%">
-            <h1>Quadro o Grito</h1>
-            <p class="price">$19.99</p>
-            <p>Esse é o quadro o Grito</p>
-            <p><button>Confira</button></p>
-        </a>
-    </div>
-
-    <div class="card">
-        <a href="produto.php">
-            <img src="https://source.unsplash.com/random/1920x1080/?product, smartphone, samsung" alt="Denim Jeans" style="width:100%">
-            <h1>Quadro o Grito</h1>
-            <p class="price">$19.99</p>
-            <p>Esse é o quadro o Grito</p>
-            <p><button>Confira</button></p>
-        </a>
-    </div>
-
-    <div class="card">
-        <a href="produto.php">
-            <img src="https://source.unsplash.com/random/1920x1080/?product, smartphone, xiaomi" alt="Denim Jeans" style="width:100%">
-            <h1>Quadro o Grito</h1>
-            <p class="price">$19.99</p>
-            <p>Esse é o quadro o Grito</p>
-            <p><button>Confira</button></p>
-        </a>
-    </div>
+    <?php endforeach; ?>
 </div>
-
 
 <?php
 require_once '../templates/rodape.php';

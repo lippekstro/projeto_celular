@@ -1,4 +1,6 @@
 <?php
+require_once '../models/produto.php';
+require_once '../models/conexao.php';
 session_start();
 
 ?>
@@ -64,6 +66,9 @@ session_start();
 
                         <div class="conteudo-dropdown">
                             <a href="">Editar Perfil</a>
+                            <?php if ($_SESSION['usuario']['nivel_acesso'] > 2) : ?>
+                                <a href="../views/gerenciar_produto.php">Gerenciar Produto</a>
+                            <?php endif; ?>
                             <a href="../views/logout.php">Sair</a>
                         </div>
                     <?php endif; ?>
