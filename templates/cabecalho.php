@@ -28,6 +28,8 @@ session_start();
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/cadastro.css">
     <link rel="stylesheet" href="../css/carrinho.css">
+    <link rel="stylesheet" href="../css/forma_pagamento.css">
+    <link rel="stylesheet" href="../css/compra_finalizada.css">
 
 
 </head>

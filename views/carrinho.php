@@ -27,7 +27,7 @@ if (isset($_SESSION['carrinho'])) {
                 <?php foreach ($carrinho->itens as $item) : ?>
                     <tr>
                         <td><?= $item->pegaNomeDoItem($item->id_produto) ?></td>
-                        <td><input type="number" value="<?= $item->quantidade ?>"></td>
+                        <td><input type="number" id="quantidade" value="<?= $item->quantidade ?>"></td>
                         <td class="preco"><?= $item->preco ?></td>
                     </tr>
                 <?php endforeach; ?>
@@ -39,9 +39,17 @@ if (isset($_SESSION['carrinho'])) {
                 <p id="exibe_total"></p>
             </div>
             <div>
-                <button>Continuar</button>
+                <button type="submit" form="form-carrinho">Continuar</button>
             </div>
         </div>
+
+        <form action="forma_pagamento.php" method="post" id="form-carrinho">
+            <?php foreach ($carrinho->itens as $item) : ?>
+                <input type="number" name="id_produto" id="id_produto" value="<?= $item->id_produto ?>" hidden>
+                <input type="number" name="quantidade" id="quantidade" value="<?= $item->quantidade ?>" hidden>
+                <input type="number" name="preco" id="preco" value="<?= $item->preco ?>" hidden>
+            <?php endforeach; ?>
+        </form>
 
     <?php else : ?>
         <p>Não há itens no carrinho</p>

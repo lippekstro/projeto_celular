@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if (password_verify($senha, $registro['senha'])) {
                 $_SESSION['usuario']['nome'] = $registro['nome'];
                 $_SESSION['usuario']['email'] = $registro['email'];
+                $_SESSION['usuario']['endereco'] = $registro['endereco'];
                 $_SESSION['usuario']['id_usuario'] = $registro['id_cliente'];
                 $_SESSION['usuario']['nivel_acesso'] = $registro['nivel_acesso'];
 
