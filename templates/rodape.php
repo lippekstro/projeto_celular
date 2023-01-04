@@ -1,12 +1,10 @@
-<script src="../js/carrossel.js"></script>
-<script src="../js/repete_senha.js"></script>
-<script src="../js/soma_carrinho.js"></script>
 </main>
 
-
-<?php if (isset($fixa)) : //aqui eu to verificando se as variaveis estao definidas, se sim vou usar um rodape que recebe elas para definir um style especifico?>
+<?php if (isset($fixa)) : //aqui eu to verificando se as variaveis estao definidas, se sim vou usar um rodape que recebe elas para definir um style especifico
+?>
     <footer style="<?= $fixa, $bottom, $largura ?>">
-    <?php else : //se nao vou usar o rodape comum que nao recebe parametros ?>
+    <?php else : //se nao vou usar o rodape comum que nao recebe parametros 
+    ?>
         <footer>
         <?php endif; ?>
         <!-- AQUI VAO OS ITENS DO RODAPE DA PAGINA -->
@@ -26,6 +24,19 @@
             <a href="https://www.instragram.com/cellria" target="_blank"><i class="bi bi-instagram redes_sociais"></i></a>
         </div>
         </footer>
+
+        <?php if ($_SERVER['PHP_SELF'] == '/projeto_celular/views/index.php') : ?>
+            <script src="../js/carrossel.js"></script>
+        <?php endif ?>
+
+        <?php if ($_SERVER['PHP_SELF'] == '/projeto_celular/views/cadastro.php') : ?>
+            <script src="../js/repete_senha.js"></script>
+        <?php endif ?>
+
+
+        <?php if ($_SERVER['PHP_SELF'] == '/projeto_celular/views/carrinho.php') : ?>
+            <script src="../js/soma_carrinho.js"></script>
+        <?php endif ?>
         </body>
 
         </html>
