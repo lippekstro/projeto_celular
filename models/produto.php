@@ -112,4 +112,13 @@ class Produto
         $stmt->bindValue(":id_produto", $this->id_produto);
         $stmt->execute();
     }
+
+    public static function listarUltimasTres(){
+        $query = "SELECT * FROM produtos LIMIT 3";
+        $conexao = conexao::conectar();
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+
+    }
 }
