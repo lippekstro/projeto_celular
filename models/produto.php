@@ -96,4 +96,20 @@ class Produto
         $lista = $stmt->fetchAll();
         return $lista;
     }
+
+    public function editarImagem()
+    {
+        $query = "UPDATE produtos SET nome = :nome, descricao = :descricao, preco = :preco, fabricante = :fabricante, estoque = :estoque, imagem = :imagem
+        WHERE id_produto = :id_produto";
+        $conexao = Conexao::conectar();
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(":nome", $this->nome);
+        $stmt->bindValue(":descricao", $this->descricao);
+        $stmt->bindValue(":preco", $this->preco);
+        $stmt->bindValue(":fabricante", $this->fabricante);
+        $stmt->bindValue(":estoque", $this->estoque);
+        $stmt->bindValue(":imagem", $this->imagem);
+        $stmt->bindValue(":id_produto", $this->id_produto);
+        $stmt->execute();
+    }
 }

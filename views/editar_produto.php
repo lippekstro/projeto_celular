@@ -17,9 +17,10 @@ try {
                 <div>
                     <input type="number" name="id_produto" id="id_produto" value="<?= $celular['id_produto'] ?>" hidden>
                 </div>
-                <!--<div>
+                
+                <div>
                     <input type="file" name="imagem" id="imagem">
-                </div>-->
+                </div>
 
                 <div>
                     <label for="nome"><span class="material-symbols-outlined">smartphone</span></label>
