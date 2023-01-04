@@ -3,6 +3,9 @@ require_once '../models/carrinho.php';
 require_once '../models/itens_do_carrinho.php';
 require_once '../templates/cabecalho.php';
 
+if(!isset($_SESSION['usuario'])){
+    header('Location: login.php');
+}
 
 // verifica se o carrinho já foi criado
 if (isset($_SESSION['carrinho'])) {
