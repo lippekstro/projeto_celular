@@ -1,11 +1,12 @@
 table {
     text-align: center;
     margin: 1rem;
-    width: 90%;
+    width: 95%;
 }
 
 th, td {
     padding: 0.5rem;
+    background-color: #80808026;
 
 }
 
@@ -16,9 +17,11 @@ th, td {
 }
 
 .container-tabela {
-    width: 80%;
+    width: 100%;
+    overflow: auto;
 }
 
 .container-total {
     width: 20%;
+    padding: 0.5rem;
 }

@@ -11,45 +11,44 @@ try {
 ?>
 
 <div>
-    <form action="../controllers/editar_produto_controller.php" method="post" enctype="multipart/form-data">
+    <form action="../controllers/editar_produto_controller.php" method="post" enctype="multipart/form-data" class="container-cadastro">
         <?php foreach ($lista as $celular) : ?>
             <div>
-                <div>
-                    <input type="number" name="id_produto" id="id_produto" value="<?= $celular['id_produto'] ?>" hidden>
-                </div>
-                
-                <div>
-                    <input type="file" name="imagem" id="imagem">
-                </div>
+                <input type="number" name="id_produto" id="id_produto" value="<?= $celular['id_produto'] ?>" hidden>
+            </div>
 
-                <div>
-                    <label for="nome"><span class="material-symbols-outlined">smartphone</span></label>
-                    <input type="text" name="nome" id="nome" value="<?= $celular['nome'] ?>">
-                </div>
+            <div class="elemento-form-cadastro">
+                <label for="imagem"><span class="material-symbols-outlined">image</span></label>
+                <input type="file" name="imagem" id="imagem">
+            </div>
 
-                <div>
-                    <label for="descricao"><span class="material-symbols-outlined">description</span></label>
-                    <textarea name="descricao" id="descricao" cols="30" rows="10"><?= $celular['descricao'] ?></textarea>
-                </div>
+            <div class="elemento-form-cadastro">
+                <label for="nome"><span class="material-symbols-outlined">smartphone</span></label>
+                <input type="text" name="nome" id="nome" value="<?= $celular['nome'] ?>">
+            </div>
 
-                <div>
-                    <label for="preco"><span class="material-symbols-outlined">sell</span></label>
-                    <input type="number" name="preco" id="preco" value="<?= $celular['preco'] ?>">
-                </div>
+            <div class="elemento-form-cadastro">
+                <label for="descricao"><span class="material-symbols-outlined">description</span></label>
+                <textarea name="descricao" id="descricao" cols="30" rows="10"><?= $celular['descricao'] ?></textarea>
+            </div>
 
-                <div>
-                    <label for="fabricante"><span class="material-symbols-outlined">factory</span></label>
-                    <input type="text" name="fabricante" id="fabricante" value="<?= $celular['fabricante'] ?>">
-                </div>
+            <div class="elemento-form-cadastro">
+                <label for="preco"><span class="material-symbols-outlined">sell</span></label>
+                <input type="number" name="preco" id="preco" value="<?= $celular['preco'] ?>">
+            </div>
 
-                <div>
-                    <label for="estoque"><span class="material-symbols-outlined">tag</span></label>
-                    <input type="number" name="estoque" id="estoque" value="<?= $celular['estoque'] ?>">
-                </div>
+            <div class="elemento-form-cadastro">
+                <label for="fabricante"><span class="material-symbols-outlined">factory</span></label>
+                <input type="text" name="fabricante" id="fabricante" value="<?= $celular['fabricante'] ?>">
+            </div>
 
-                <div>
-                    <button type="submit">Cadastrar</button>
-                </div>
+            <div class="elemento-form-cadastro">
+                <label for="estoque"><span class="material-symbols-outlined">tag</span></label>
+                <input type="number" name="estoque" id="estoque" value="<?= $celular['estoque'] ?>">
+            </div>
+
+            <div class="elemento-form-cadastro">
+                <button type="submit">Atualizar</button>
             </div>
         <?php endforeach; ?>
     </form>

@@ -29,8 +29,8 @@ CREATE TABLE pedidos (
   id_pedido INTEGER AUTO_INCREMENT PRIMARY KEY,
   id_cliente INTEGER NOT NULL,
   id_forma_pagamento INTEGER NOT NULL,
-  data_pedido DATETIME NOT NULL,
-  data_entrega DATETIME NOT NULL,
+  data_pedido timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
+  data_entrega timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
   endereco_entrega TEXT NOT NULL,
   FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
   FOREIGN KEY (id_forma_pagamento) REFERENCES formas_de_pagamento(id_forma_de_pagamento)

@@ -9,8 +9,8 @@
         <?php endif; ?>
         <!-- AQUI VAO OS ITENS DO RODAPE DA PAGINA -->
         <div class="container_contatos">
-            <span class="material-symbols-outlined">mail</span>
-            <span class="material-symbols-outlined">phone</span>
+            <a href="mailto:exemplo@gmail.com"><span class="material-symbols-outlined">mail</span></a>
+            <a href="tel:+55 (98) 9 1111-1111"><span class="material-symbols-outlined">phone</span></a>
         </div>
 
         <div class="texto_rodape">
@@ -19,9 +19,9 @@
         </div>
 
         <div class="container_redes_sociais">
-            <a href=""><i class="bi bi-twitter redes_sociais"></i></a>
-            <a href=""><i class="bi bi-facebook redes_sociais"></i></a>
-            <a href="https://www.instragram.com/cellria" target="_blank"><i class="bi bi-instagram redes_sociais"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="bi bi-twitter redes_sociais"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook redes_sociais"></i></a>
+            <a href="https://www.instragram.com" target="_blank"><i class="bi bi-instagram redes_sociais"></i></a>
         </div>
         </footer>
 

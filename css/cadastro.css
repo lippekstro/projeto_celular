@@ -22,9 +22,10 @@
     align-items: center;
 }
 
-.elemento-form-cadastro input {
+.elemento-form-cadastro input, textarea {
     padding: 0.5rem;
     margin: 0 0.5rem;
+    border-radius: 10px;
 }
 
 .elemento-form-cadastro label {
@@ -33,4 +34,10 @@
 
 .elemento-form-cadastro button {
     font-size: 22px;
+}
+
+@media only screen and (max-width: 600px) {
+    .container-imagem {
+        display: none;
+    }
 }

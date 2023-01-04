@@ -18,6 +18,10 @@ footer {
     flex-wrap: wrap;
 }
 
+.container_contatos a {
+    color: white;
+}
+
 .container_contatos span{
     margin: 0.5rem;
 

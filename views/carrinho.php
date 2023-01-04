@@ -35,8 +35,14 @@ if (isset($_SESSION['carrinho'])) {
         </div>
 
         <div class="container-total">
-            <p id="exibe_total"></p>
+            <div>
+                <p id="exibe_total"></p>
+            </div>
+            <div>
+                <button>Continuar</button>
+            </div>
         </div>
+
     <?php else : ?>
         <p>Não há itens no carrinho</p>
     <?php endif; ?>

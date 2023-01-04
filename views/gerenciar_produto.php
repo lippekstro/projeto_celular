@@ -8,7 +8,7 @@ try {
 }
 ?>
 
-<div>
+<div class="container-tabela">
     <table>
         <caption>Tabela de Produtos</caption>
         <tr>

@@ -3,7 +3,7 @@ require_once '../templates/cabecalho.php';
 ?>
 
 <div class="container-imagem-formulario">
-    <div>
+    <div class="container-imagem">
         <img src="../img/logo-black-removebg-preview.png" alt="">
     </div>
     <div class="">

@@ -1,8 +1,8 @@
 CREATE TABLE carrinho (
   id_carrinho INTEGER AUTO_INCREMENT PRIMARY KEY,
   id_cliente INTEGER NOT NULL,
-  data_criacao DATETIME NOT NULL,
-  data_atualizacao DATETIME NOT NULL,
+  data_criacao timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
+  data_atualizacao timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL,
   FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
 );
 
