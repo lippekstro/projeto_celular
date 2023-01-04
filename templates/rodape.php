@@ -25,16 +25,16 @@
         </div>
         </footer>
 
-        <?php if ($_SERVER['PHP_SELF'] == '/projeto_celular/views/index.php') : ?>
+        <?php if ($_SERVER['PHP_SELF'] == '/noite/projeto_celular/views/index.php') : ?>
             <script src="../js/carrossel.js"></script>
         <?php endif ?>
 
-        <?php if ($_SERVER['PHP_SELF'] == '/projeto_celular/views/cadastro.php') : ?>
+        <?php if ($_SERVER['PHP_SELF'] == '/noite/projeto_celular/views/cadastro.php') : ?>
             <script src="../js/repete_senha.js"></script>
         <?php endif ?>
 
 
-        <?php if ($_SERVER['PHP_SELF'] == '/projeto_celular/views/carrinho.php') : ?>
+        <?php if ($_SERVER['PHP_SELF'] == '/noite/projeto_celular/views/carrinho.php') : ?>
             <script src="../js/soma_carrinho.js"></script>
         <?php endif ?>
         </body>

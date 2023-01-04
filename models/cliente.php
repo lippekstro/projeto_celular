@@ -68,6 +68,7 @@ class Cliente
         $stmt->bindValue(":email", $this->email);
         $stmt->bindValue(":endereco", $this->endereco);
         $stmt->bindValue(":telefone", $this->telefone);
+        $stmt->bindValue(":id_cliente", $this->id_cliente);
         $stmt->execute();
     }
 
@@ -78,5 +79,17 @@ class Cliente
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(":id_cliente", $this->id_cliente);
         $stmt->execute();
+        
+    }
+
+    public static function listarPeloId($id_cliente)
+    {
+        $query = "SELECT * FROM clientes WHERE id_cliente = :id_cliente";
+        $conexao = Conexao::conectar();
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(":id_cliente", $id_cliente);
+        $stmt->execute();
+        $lista = $stmt->fetchAll();
+        return $lista;
     }
 }
