@@ -23,11 +23,18 @@ try {
         </div>
 
         <div class="container-botoes-produto">
-            <button class="botao-info" title="adicionar ao carrinho"><span class="material-symbols-outlined">add_shopping_cart</span></button>
+            <button type="submit" class="botao-info" title="adicionar ao carrinho" form="form-produto">
+                <span class="material-symbols-outlined">add_shopping_cart</span>
+            </button>
         </div>
 
     </div>
 </div>
+
+<form action="../controllers/adiciona_no_carrinho_controller.php" method="post" id="form-produto">
+    <input type="number" name="id_produto" id="id_produto" value="<?= $celular['id_produto'] ?>" hidden>
+    <input type="number" name="preco" id="preco" value="<?= $celular['preco'] ?>" hidden>
+</form>
 <?php endforeach; ?>
 
 <?php

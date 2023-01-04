@@ -1,29 +1,39 @@
 <?php
-
 require_once '../models/cliente.php';
 require_once '../models/carrinho.php';
+require_once '../models/itens_do_carrinho.php';
 require_once '../models/conexao.php';
 session_start();
 
+// tenta adicionar o item ao carrinho
 try {
-    $id_carrinho = 0;
-    $id_cliente = $_SESSION['usuario']['id_usuario'];
+    // pega os dados do formulário
     $id_produto = $_POST['id_produto'];
-    $quantidade = $_POST['quantidade'];
+    $quantidade = 1;
     $preco = $_POST['preco'];
 
-    $carrinho = Carrinho::verificaCarrinho($id_carrinho, $id_cliente);
+    // verifica se o carrinho já foi criado
+    if (!isset($_SESSION['carrinho'])) {
+        // cria o carrinho
+        $carrinho = new Carrinho();
+    } else {
+        // recupera o carrinho da sessão
+        $carrinho = $_SESSION['carrinho'];
+    }
 
+    // cria o item do carrinho
     $item = new ItensDoCarrinho();
     $item->id_produto = $id_produto;
     $item->quantidade = $quantidade;
     $item->preco = $preco;
-    $item->criar();
 
-    $carrinho->adicionaProduto($item);
+    // adiciona o item ao carrinho
+    $carrinho->adicionarItem($item);
 
+    // salva o carrinho na sessão
+    $_SESSION['carrinho'] = $carrinho;
 
-
+    // redireciona para a página do carrinho
     header("Location: ../views/carrinho.php");
 } catch (Exception $e) {
     echo $e->getMessage();

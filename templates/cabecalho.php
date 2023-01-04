@@ -60,8 +60,8 @@ session_start();
                         <a href="../views/login.php"><span class="material-symbols-outlined">login</span></a>
                     <?php else : ?>
                         <div class="flex-horizontal-alinhado">
-                            <p>Olá, <?= $_SESSION['usuario']['nome'] ?></p>
-                            <a href="../views/login.php"><span class="material-symbols-outlined">account_circle</span></a>
+                            <p style="cursor: default;">Olá, <?= $_SESSION['usuario']['nome'] ?></p>
+                            <span class="material-symbols-outlined" style="cursor: default;">account_circle</span>
                         </div>
 
                         <div class="conteudo-dropdown">

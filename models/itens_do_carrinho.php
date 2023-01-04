@@ -34,7 +34,7 @@ class ItensDoCarrinho
 
     public function criar()
     {
-        $query = 'INSERT INTO itens_do_carrinho (id_item, id_carrinho, id_produto, quantidade, preco) 
+        $query = 'INSERT INTO itens_do_carrinho (id_itens_do_carrinho, id_carrinho, id_produto, quantidade, preco) 
         VALUES (:id_item, :id_carrinho, :id_produto, :quantidade, :preco)';
         $conexao = conexao::conectar();
         $stmt = $conexao->prepare($query);
@@ -44,5 +44,18 @@ class ItensDoCarrinho
         $stmt->bindParam(':quantidade', $this->quantidade);
         $stmt->bindParam(':preco', $this->preco);
         $stmt->execute();
+    }
+
+    public function pegaNomeDoItem($id_produto)
+    {
+        $query = 'SELECT nome FROM produtos WHERE id_produto = :id_produto';
+        $conexao = conexao::conectar();
+        $stmt = $conexao->prepare($query);
+        $stmt->bindParam(':id_produto', $id_produto);
+        $stmt->execute();
+
+        // recupera o nome do produto
+        $nome = $stmt->fetchColumn();
+        return $nome;
     }
 }

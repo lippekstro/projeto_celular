@@ -1,5 +1,6 @@
 <script src="../js/carrossel.js"></script>
 <script src="../js/repete_senha.js"></script>
+<script src="../js/soma_carrinho.js"></script>
 </main>
 
 
