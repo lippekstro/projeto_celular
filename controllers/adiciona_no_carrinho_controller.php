@@ -5,36 +5,38 @@ require_once '../models/itens_do_carrinho.php';
 require_once '../models/conexao.php';
 session_start();
 
-// tenta adicionar o item ao carrinho
 try {
-    // pega os dados do formulário
-    $id_produto = $_POST['id_produto'];
-    $quantidade = 1;
-    $preco = $_POST['preco'];
+    // Obtém o ID do carrinho do usuário
+    $carrinho = Carrinho::obterPorUsuarioId($_SESSION['usuario']['id_usuario']);
 
-    // verifica se o carrinho já foi criado
-    if (!isset($_SESSION['carrinho'])) {
-        // cria o carrinho
+    if (!$carrinho) {
+        // Cria um novo carrinho para o usuário
         $carrinho = new Carrinho();
+        $carrinho->id_cliente = $_SESSION['usuario']['id_usuario'];
+        $carrinho->criar();
+    }
+    $carrinho_id = $carrinho->id_carrinho;
+
+    // Verifica se o produto já está no carrinho
+    $item = ItensDoCarrinho::obterPorCarrinhoIdProdutoId($carrinho_id, $_POST['id_produto']);
+
+    if ($item) {
+        // Atualiza a quantidade do item
+        $item->quantidade = $item->quantidade + 1;
+        $item->editar();
     } else {
-        // recupera o carrinho da sessão
-        $carrinho = $_SESSION['carrinho'];
+        // Adiciona um novo item ao carrinho
+        $item = new ItensDoCarrinho();
+        $item->id_carrinho = $carrinho_id;
+        $item->id_produto = $_POST['id_produto'];
+        $item->quantidade = 1;
+        $item->preco = $_POST['preco'];
+        $item->criar();
     }
 
-    // cria o item do carrinho
-    $item = new ItensDoCarrinho();
-    $item->id_produto = $id_produto;
-    $item->quantidade = $quantidade;
-    $item->preco = $preco;
-
-    // adiciona o item ao carrinho
-    $carrinho->adicionarItem($item);
-
-    // salva o carrinho na sessão
-    $_SESSION['carrinho'] = $carrinho;
 
     // redireciona para a página do carrinho
     header("Location: ../views/carrinho.php");
-} catch (Exception $e) {
+} catch (PDOException $e) {
     echo $e->getMessage();
 }

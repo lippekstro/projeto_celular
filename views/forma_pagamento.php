@@ -7,11 +7,7 @@ if(!isset($_SESSION['usuario'])){
     header('Location: login.php');
 }
 
-// verifica se o carrinho já foi criado
-if (isset($_SESSION['carrinho'])) {
-    // recupera o carrinho da sessão
-    $carrinho = $_SESSION['carrinho'];
-}
+
 
 ?>
 
@@ -24,12 +20,12 @@ if (isset($_SESSION['carrinho'])) {
         <div>
             <p>Total: </p>
             <p>Escolha a Forma de Pagamento: </p>
-            <form action="compra_finalizada.php" id="forma-pagamento"> <!--temporario pois deve ir para um controller-->
-                <input type="radio" name="pagamento" id="boleto" value="boleto">
+            <form action="../controllers/cria_pedido_controller.php" method="post" id="forma-pagamento">
+                <input type="radio" name="pagamento" id="boleto" value="1" checked>
                 <label for="boleto">Boleto</label>
-                <input type="radio" name="pagamento" id="credito" value="credito">
+                <input type="radio" name="pagamento" id="credito" value="2">
                 <label for="credito">Credito</label>
-                <input type="radio" name="pagamento" id="pix" value="pix">
+                <input type="radio" name="pagamento" id="pix" value="3">
                 <label for="pix">Pix</label>
             </form>
         </div>

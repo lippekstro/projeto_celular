@@ -4,7 +4,7 @@ class Carrinho
 {
     public $id_carrinho;
     public $id_cliente;
-    public $itens = array(); // array para armazenar os itens do carrinho
+    //public $itens = array(); // array para armazenar os itens do carrinho
 
 
     public function __construct($id_carrinho = false)
@@ -33,24 +33,46 @@ class Carrinho
         $query = 'INSERT INTO carrinho (id_cliente) VALUES (:id_cliente)';
         $conexao = conexao::conectar();
         $stmt = $conexao->prepare($query);
-        $stmt->bindParam(':id_cliente', $id_cliente);
+        $stmt->bindParam(':id_cliente', $this->id_cliente);
         $stmt->execute();
     }
 
-    public static function buscaCarrinhoDoUsuario($id_cliente){
-        $query = 'SELECT * FROM carrinho WHERE id_cliente = :id_cliente';
+    public static function listar()
+    {
+        $query = "SELECT * FROM carrinho";
         $conexao = conexao::conectar();
-        $stmt = $conexao->prepare($query);
-        $stmt->bindParam(':id_cliente', $id_cliente);
-        $stmt->execute();
-        $lista = $stmt->fetch();
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetchAll();
         return $lista;
     }
 
-    public function adicionarItem(ItensDoCarrinho $item)
+    public function deletar()
     {
-       
-        // adiciona o item ao array de itens do carrinho
-        $this->itens[] = $item;
+        $query = "DELETE FROM carrinho WHERE id_cliente=:id_cliente";
+        $conexao = Conexao::conectar();
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(":id_cliente", $this->id_cliente);
+        $stmt->execute();
+    }
+
+    public static function obterPorUsuarioId($id_cliente)
+    {
+        $query = 'SELECT * FROM carrinho WHERE id_cliente = :id_cliente';
+        $conexao = Conexao::conectar();
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(":id_cliente", $id_cliente);
+        $stmt->execute();
+        $carrinho = $stmt->fetchObject('Carrinho');
+        return $carrinho;
+    }
+
+    // Método para limpar todos os itens do carrinho
+    public function limparItens()
+    {
+        $query = 'DELETE FROM itens_do_carrinho WHERE id_carrinho = :id_carrinho';
+        $conexao = Conexao::conectar();
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(":id_carrinho", $this->id_carrinho);
+        $stmt->execute();
     }
 }
