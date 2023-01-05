@@ -35,6 +35,8 @@ class Carrinho
         $stmt = $conexao->prepare($query);
         $stmt->bindParam(':id_cliente', $this->id_cliente);
         $stmt->execute();
+        $id = $conexao->lastInsertId();
+        return $id;
     }
 
     public static function listar()

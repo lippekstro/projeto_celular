@@ -13,9 +13,8 @@ try {
         // Cria um novo carrinho para o usuário
         $carrinho = new Carrinho();
         $carrinho->id_cliente = $_SESSION['usuario']['id_usuario'];
-        $carrinho->criar();
+        $carrinho_id = $carrinho->criar();
     }
-    $carrinho_id = $carrinho->id_carrinho;
 
     // Verifica se o produto já está no carrinho
     $item = ItensDoCarrinho::obterPorCarrinhoIdProdutoId($carrinho_id, $_POST['id_produto']);
