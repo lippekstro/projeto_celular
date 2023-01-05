@@ -13,7 +13,6 @@ try {
     echo $e->getMessage();
 }
 
-
 ?>
 <!-- container do carrossel -->
 <div class="container-carrossel">

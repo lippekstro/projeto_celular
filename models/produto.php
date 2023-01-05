@@ -114,7 +114,7 @@ class Produto
     }
 
     public static function listarUltimasTres(){
-        $query = "SELECT * FROM produtos LIMIT 3";
+        $query = "SELECT * FROM produtos ORDER BY id_produto DESC LIMIT 3";
         $conexao = conexao::conectar();
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
