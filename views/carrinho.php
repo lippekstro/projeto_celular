@@ -7,28 +7,44 @@ require_once '../templates/cabecalho.php';
 
 
 // verifica se o carrinho já foi criado
-if (isset($_SESSION['carrinho'])) {
-    // recupera o carrinho da sessão
-    $carrinho = $_SESSION['carrinho'];
+//if (isset($_SESSION['carrinho'])) {
+// recupera o carrinho da sessão
+//    $carrinho = $_SESSION['carrinho'];
+//}
+
+// Obtém o ID do carrinho do usuário
+$carrinho = Carrinho::obterPorUsuarioId($_SESSION['usuario']['id_usuario']);
+if ($carrinho) {
+    // Obtém os itens do carrinho
+    $itens = ItensDoCarrinho::obterPorCarrinhoId($carrinho->id_carrinho);
 }
+
 
 ?>
 
 
 <div class="container-carrinho">
-    <?php if (isset($_SESSION['carrinho'])) : ?>
+    <?php if (isset($itens) && count($itens)>0) : ?>
+
         <div class="container-tabela">
             <table>
                 <tr>
                     <th>Nome</th>
                     <th>Quantidade</th>
                     <th>Preço</th>
+                    <th>Total</th>
                 </tr>
-                <?php foreach ($carrinho->itens as $item) : ?>
+                <?php foreach ($itens as $item) : ?>
                     <tr>
-                        <td><?= $item->pegaNomeDoItem($item->id_produto) ?></td>
+                        <td><?= $item->getProduto()->nome ?></td>
                         <td><input type="number" id="quantidade" value="<?= $item->quantidade ?>"></td>
-                        <td class="preco"><?= $item->preco ?></td>
+                        <td><?= $item->preco ?></td>
+                        <td class="preco"><?= $item->getTotal() ?></td>
+                        <td>
+                            <a href="../controllers/remove_do_carrinho_controller.php?id_item=<?= $item->id_itens_do_carrinho ?>">
+                                <span class="material-symbols-outlined">delete</span>
+                            </a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </table>
@@ -44,7 +60,7 @@ if (isset($_SESSION['carrinho'])) {
         </div>
 
         <form action="forma_pagamento.php" method="post" id="form-carrinho">
-            <?php foreach ($carrinho->itens as $item) : ?>
+            <?php foreach ($itens as $item) : ?>
                 <input type="number" name="id_produto" id="id_produto" value="<?= $item->id_produto ?>" hidden>
                 <input type="number" name="quantidade" id="quantidade" value="<?= $item->quantidade ?>" hidden>
                 <input type="number" name="preco" id="preco" value="<?= $item->preco ?>" hidden>

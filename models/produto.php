@@ -93,8 +93,8 @@ class Produto
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(":id_produto", $id_produto);
         $stmt->execute();
-        $lista = $stmt->fetchAll();
-        return $lista;
+        $produto = $stmt->fetchObject('Produto');
+        return $produto;
     }
 
     public function editarImagem()
@@ -113,12 +113,12 @@ class Produto
         $stmt->execute();
     }
 
-    public static function listarUltimasTres(){
+    public static function listarUltimasTres()
+    {
         $query = "SELECT * FROM produtos ORDER BY id_produto DESC LIMIT 3";
         $conexao = conexao::conectar();
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
-
     }
 }

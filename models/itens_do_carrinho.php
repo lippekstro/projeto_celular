@@ -18,7 +18,7 @@ class ItensDoCarrinho
 
     public function carregar()
     {
-        $query = "SELECT id_carrinho, id_produto, quantidade, preco FROM itens_do_carrinho WHERE id_item = :id_item";
+        $query = "SELECT id_carrinho, id_produto, quantidade, preco FROM itens_do_carrinho WHERE id_itens_do_carrinho = :id_item";
         $conexao = conexao::conectar();
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(':id_item', $this->id_item);
@@ -34,11 +34,10 @@ class ItensDoCarrinho
 
     public function criar()
     {
-        $query = 'INSERT INTO itens_do_carrinho (id_itens_do_carrinho, id_carrinho, id_produto, quantidade, preco) 
-        VALUES (:id_item, :id_carrinho, :id_produto, :quantidade, :preco)';
+        $query = 'INSERT INTO itens_do_carrinho (id_carrinho, id_produto, quantidade, preco) 
+        VALUES (:id_carrinho, :id_produto, :quantidade, :preco)';
         $conexao = conexao::conectar();
         $stmt = $conexao->prepare($query);
-        $stmt->bindParam(':id_item', $this->id_item);
         $stmt->bindParam(':id_carrinho', $this->id_carrinho);
         $stmt->bindParam(':id_produto', $this->id_produto);
         $stmt->bindParam(':quantidade', $this->quantidade);
@@ -46,16 +45,61 @@ class ItensDoCarrinho
         $stmt->execute();
     }
 
-    public function pegaNomeDoItem($id_produto)
+    public function editar()
     {
-        $query = 'SELECT nome FROM produtos WHERE id_produto = :id_produto';
+        $query = 'UPDATE itens_do_carrinho SET id_carrinho = :id_carrinho, id_produto = :id_produto, quantidade = :quantiade, preco = :preco 
+        WHERE id_itens_do_carrinho = :id_item';
         $conexao = conexao::conectar();
         $stmt = $conexao->prepare($query);
+        $stmt->bindValue(':id_carrinho', $this->id_carrinho);
+        $stmt->bindValue(':id_produto', $this->id_produto);
+        $stmt->bindValue(':quantidade', $this->quantidade);
+        $stmt->bindValue(':preco', $this->preco);
+        $stmt->bindValue(':id_item', $this->id_item);
+        $stmt->execute();
+    }
+
+    // Método para obter o produto do item
+    public function getProduto()
+    {
+        return Produto::listarPeloId($this->id_produto);
+    }
+
+    // Método para obter o total do item
+    public function getTotal()
+    {
+        return $this->quantidade * $this->preco;
+    }
+
+    public function deletar()
+    {
+        $query = "DELETE FROM itens_do_carrinho WHERE id_itens_do_carrinho = :id_item";
+        $conexao = Conexao::conectar();
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(":id_item", $this->id_item);
+        $stmt->execute();
+    }
+
+    public static function obterPorCarrinhoIdProdutoId($id_carrinho, $id_produto)
+    {
+        $query = 'SELECT * FROM itens_do_carrinho WHERE id_carrinho = :id_carrinho AND id_produto = :id_produto';
+        $conexao = conexao::conectar();
+        $stmt = $conexao->prepare($query);
+        $stmt->bindParam(':id_carrinho', $id_carrinho);
         $stmt->bindParam(':id_produto', $id_produto);
         $stmt->execute();
+        $item = $stmt->fetchObject('ItensDoCarrinho');
+        return $item;
+    }
 
-        // recupera o nome do produto
-        $nome = $stmt->fetchColumn();
-        return $nome;
+    public static function obterPorCarrinhoId($id_carrinho)
+    {
+        $query = 'SELECT * FROM itens_do_carrinho WHERE id_carrinho = :id_carrinho';
+        $conexao = conexao::conectar();
+        $stmt = $conexao->prepare($query);
+        $stmt->bindParam(':id_carrinho', $id_carrinho);
+        $stmt->execute();
+        $itens = $stmt->fetchAll(PDO::FETCH_CLASS, 'ItensDoCarrinho');
+        return $itens;
     }
 }
