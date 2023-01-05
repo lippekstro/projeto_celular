@@ -20,10 +20,15 @@ try {
 
     // Verifica se o produto já está no carrinho
     $item = ItensDoCarrinho::obterPorCarrinhoIdProdutoId($carrinho_id, $_POST['id_produto']);
-
+   
+    
     if ($item) {
         // Atualiza a quantidade do item
-        $item->quantidade = $item->quantidade + 1;
+        $item = new ItensDoCarrinho($item->id_itens_do_carrinho);
+        $item->id_carrinho = $carrinho_id;
+        $item->id_produto = $_POST['id_produto'];
+        $item->quantidade++;
+        $item->preco = $_POST['preco'];
         $item->editar();
     } else {
         // Adiciona um novo item ao carrinho

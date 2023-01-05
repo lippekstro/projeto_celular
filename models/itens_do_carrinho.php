@@ -47,7 +47,7 @@ class ItensDoCarrinho
 
     public function editar()
     {
-        $query = 'UPDATE itens_do_carrinho SET id_carrinho = :id_carrinho, id_produto = :id_produto, quantidade = :quantiade, preco = :preco 
+        $query = 'UPDATE itens_do_carrinho SET id_carrinho = :id_carrinho, id_produto = :id_produto, quantidade = :quantidade, preco = :preco 
         WHERE id_itens_do_carrinho = :id_item';
         $conexao = conexao::conectar();
         $stmt = $conexao->prepare($query);
